@@ -1,7 +1,10 @@
-name: actions-trial
+name: gcp-test
 on: [push]
+
 jobs:
-check-bats-version:
-runs-on: ubuntu-latest
-steps:
-- run: echo "first action!"
+ build:
+  runs-on: ubuntu-latest
+  steps:
+  - uses: actions/checkout@v4
+  - name: Call your scrip
+    run: .github/workflows/test_gcd.sh
